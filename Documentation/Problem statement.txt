@@ -1,0 +1,43 @@
+"I'm Fine".
+
+Problem scenario
+Grandma lives alone in her house and she doesn't talk to her family every day. 
+Her children lives not so close to her, so she only gets a visit every week or two. 
+Her children are often busy with their own stuff, so they don't call her on the phone as often as they would like.
+
+Grandma is fine with this, as she is still able to take care of herself, but as she is getting older she would like the safety of someone checking up on her every day, making sure she is alright. She has heard scary stories about older people getting ill and not getting any help in time - she doesn't like that thought!
+
+Grandma is an independent person and don't want to bother her children to call her on the phone every day, even though she knows that they would be happy to.
+
+Next week, Grandma is getting the new safety system, called "I'm Fine", for elderly people who may be at risk of suddenly getting ill and not being able to alert anyone.
+With this system she only has to press the big red button a couple of times a day when it starts to blink and make a beeeping sound. When she press the button, the red light stops blinking, the beeping goes away and a green light shows. This is the way of the safety system to tell her that she has sent a message letting her children know the is OK. 
+
+The system monitors the messages from Grandma and does not notify her children as long as she periodically reports that she is fine. If she does not push the button, the system will detect this and send out SMS and email messages to her children and to the neighbor. Then they will know that something may be wrong and they must call her and maybe also visit her to help.
+
+When the children receives an alert message on their phone, they must actively acknowledge this. When acknowledged, the system sends back a notification to the "I'm Fine" button at Grandma to let her know that someone has acknowledged that she needs assistance and help is on the way.
+
+With the new system, Grandma knows that if she does not push the "I'm Fine" button regularly, it will only be a short time, before her children can help her. 
+
+
+
+Solution.
+1. The "I'm Fine" button.
+- The "I'm Fine" button is built around the MKR1000 device.
+- I/O pins are used connecting a switch and some colored LED's.
+- The MKR1000 communicates with Asure Cloud to send and receive messages.
+
+2. A Windows Service application is running in Azure Cloud. 
+- This service runs the business logic and stores data in a SQL database.
+- It monitors the messages from Grandma and sends out notifications when needed.
+- The SQL database contains configuration data for notification intervals, receivers etc.
+
+3. A Windows 10 UWP application for system configuration.
+- Maintenance and configuration of "I'm Fine" button devices
+- System configuration tool, which can edit and store configuration data in the SQL database.
+- Monitoring the history of when device activity.
+
+Azure Cloud (To be determined).
+- Azure IoT Hub
+- Azure Virtual Machine
+- Azure SQL database
+- Azure App Service
